@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class CalculadoraPintura42522583 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+            final double ALTURA_PAREDE = 2.7; // METROS
+            final double RENDIMENTO_LITRO = 10.0; // M2
+            final double DESCONTO_ABERTURAS = 0.10; // 10% PARA PORTAS/JANELAS
+
+            System.out.println("Digite o comprimento de um dos lados do quarto (em metros): ");
+            double lado = teclado.nextDouble();
+
+            double areaUmaParede = lado * ALTURA_PAREDE;
+            double areaTotalParedes = areaUmaParede * 4;
+
+            double areaLiquida = areaTotalParedes * (1 - DESCONTO_ABERTURAS);
+
+            double litrosNecessarios = areaLiquida / RENDIMENTO_LITRO;
+
+                System.out.println("\n---- Resumo do Orçamento ---");
+                System.out.printf("Area brutas das paredes: %.2f m²\n" , areaTotalParedes);   
+                System.out.printf("Area a ser pintada (com descontos): %.2f m²\n" , areaLiquida);
+                System.out.printf("Totalde tinta necessária: %.2f Litros\n" , litrosNecessarios);
+                System.out.println("-----------------");
+
+                teclado.close();
+
+     }
+}       
+           
